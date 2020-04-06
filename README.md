@@ -1,3 +1,13 @@
+<!--
+ * @Author: 24min
+ * @Date: 2020-04-01 19:41:09
+ * @LastEditors: 24min
+ * @LastEditTime: 2020-04-06 21:52:51
+ * @Description: file content
+ -->
+##前言
+feature-v0.1分支从0开始 以产品的要求来构建本项目。该项目要求 头部导航可通过redux修改数据 请求封装 一个常规页面（包括列表页 分页 对话框等） antd
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
