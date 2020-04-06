@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-06 21:45:04
+ * @LastEditTime: 2020-04-06 22:20:20
  * @Description: file content
  */
 import React from 'react';
@@ -10,9 +10,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import { HashRouter as Router } from 'react-router-dom'
 ReactDOM.render(
-  <App />,
+  <Router>
+    <App />
+  </Router>,
   document.getElementById('root')
 );
 
