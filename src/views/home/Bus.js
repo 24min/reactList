@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-06 14:16:28
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-06 14:46:57
+ * @LastEditTime: 2020-04-06 14:47:51
  * @Description: file content
  */
 import React from 'react';
@@ -16,9 +16,7 @@ class Bus extends React.PureComponent {
       }
     render() {
         return (
-            <h1 className="home-header">我是Bus组件
-            
-            </h1>
+            <h1 className="home-header">我是Bus组件</h1>
         )
 
     }
