@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-01 20:06:26
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-05 14:52:46
+ * @LastEditTime: 2020-04-06 14:16:09
  * @Description: file content
  */
 import React from 'react';
@@ -22,6 +22,7 @@ export default class Home extends React.PureComponent {
     }
     render() {
         console.log('sss', this.routes)
+        console.log('sss', this.props)
         return (
             <div>
                 <Row>
@@ -37,8 +38,6 @@ export default class Home extends React.PureComponent {
                         {/* 左导航 */}
                     </Col>
                     <Col span={18}>
-                        {/* <h1 className="home-header">我是home组件</h1>
-                         */}
                         <Switch>
                             {this.routes.map((route, index) => (
                                 <Route path={route.path} key={index} component={route.component}></Route>
@@ -50,5 +49,5 @@ export default class Home extends React.PureComponent {
             </div>
         )
 
-    }  
+    }
 }

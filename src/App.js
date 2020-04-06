@@ -2,12 +2,13 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-05 14:13:31
+ * @LastEditTime: 2020-04-06 14:41:17
  * @Description: file content
  */
 import React from 'react';
 import './App.css';
 import Home from './views/home/home'
+import Bus from './views/home/Bus'
 import { Menu } from 'antd'
 import {
   MailOutlined,
@@ -20,7 +21,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import { connect } from 'react-redux';
+import secondHead  from "./action/testAction"
+/**routes可以单独抽出 做一个公共路由配置的地方 在feature-v0.1上 可以重新考虑下 这边的架构处理*/
 const routes = [
   {
     path: "/sandwiches",
@@ -41,15 +44,23 @@ const routes = [
     ]
   }
 ];
-function Bus() {
-  return <h3>我是home/Bus组件</h3>;
-}
+/**bus和cart 是一个具体的页面 */
+// function Bus() {
+//   return <h3>我是home/Bus组件</h3>;
+// }
 
 function Cart() {
   return <h3>我是home/cart</h3>;
 }
+function NoMatch() {
+  return <h3>没有找到！！</h3>
+}
 
-export default class App extends React.PureComponent {
+class App extends React.PureComponent {
+  componentDidMount() {
+    // 触发action操作
+    this.props.secondHead();
+  }
   render() {
     return (
       <Router>
@@ -62,13 +73,16 @@ export default class App extends React.PureComponent {
             </Menu.Item>
             <Menu.Item key="app" >
               <AppstoreOutlined />
-              <Link to="/sandwiches">Sandwiches</Link>
+              <Link to="/sandwiches">{this.props.secondHeader}</Link>
             </Menu.Item>
           </Menu>
           <Switch>
             {routes.map((route, i) => (
               <RouteWithSubRoutes key={i} {...route} />
             ))}
+            <Route path="*">
+              <NoMatch />
+            </Route>
           </Switch>
         </div>
       </Router>)
@@ -93,7 +107,10 @@ function RouteWithSubRoutes(route) {
 function Sandwiches() {
   return <h2>Sandwiches</h2>;
 }
-
+const mapStateToProps = state => ({
+  secondHeader: state.test.secondHeader,
+})
+export default connect(mapStateToProps, { secondHead })(App)
 // function Tacos({ routes }) {
 //   return (
 //     <div>
