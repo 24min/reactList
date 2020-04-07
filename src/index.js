@@ -2,18 +2,19 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-06 22:20:20
+ * @LastEditTime: 2020-04-07 20:05:38
  * @Description: file content
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
+import RouterView from './router/router'
 import * as serviceWorker from './serviceWorker';
-import { HashRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router,useHistory  } from 'react-router-dom'   
 ReactDOM.render(
-  <Router>
-    <App />
+  <Router history={useHistory}>
+    <RouterView></RouterView>
   </Router>,
   document.getElementById('root')
 );

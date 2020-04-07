@@ -1,0 +1,14 @@
+.login{
+    height:100vh;
+    background: url(../../img/bg.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.login-container{
+    padding:20px;
+    width:500px;
+    margin:auto;
+    justify-content: center;
+    background-color:#fff;
+}
