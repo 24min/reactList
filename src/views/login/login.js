@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-07 18:28:16
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-07 20:07:19
+ * @LastEditTime: 2020-04-07 22:34:44
  * @Description: 登录
  */
 import React from 'react'
@@ -10,7 +10,7 @@ import './login.css'
 import { Form, Input, Button } from 'antd';
 export default class Login extends React.PureComponent {
     login() {
-        this.props.history.push('/sandwiches')
+        this.props.history.push('/home/sandwiches')
     }
     render() {
         return (

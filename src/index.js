@@ -2,19 +2,22 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-07 20:05:38
+ * @LastEditTime: 2020-04-07 22:38:24
  * @Description: file content
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import RouterView from './router/router'
+import Home from './views/home/home'
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router,useHistory  } from 'react-router-dom'   
+import { BrowserRouter as Router, useHistory, Route } from 'react-router-dom'
+// const history = useHistory()
 ReactDOM.render(
   <Router history={useHistory}>
-    <RouterView></RouterView>
+    <Route path="/" component={Home}></Route>
+    {/* <Home /> */}
+    {/* <RouterView></RouterView> */}
   </Router>,
   document.getElementById('root')
 );
