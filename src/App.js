@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-08 12:09:43
+ * @LastEditTime: 2020-04-08 12:52:36
  * @Description: file content
  */
 import React from 'react';
@@ -11,6 +11,7 @@ import './App.css';
 import Home from './views/home/home'
 import Cart from './views/cart/cart'
 import Login from './views/login/login'
+import Test from './views/test/test'
 import { Menu, Row, Col,Button } from 'antd'
 import {
   MailOutlined,
@@ -22,7 +23,8 @@ import {
   Switch,
   Route,
   Link,
-  useHistory
+  useHistory,
+  Redirect
 } from "react-router-dom";
 
 // function Cart() {
@@ -43,6 +45,10 @@ const AppRoute = {
   cart: {
     path: '/cart',
     component: Cart
+  },
+  test:{
+    path:'/test',
+    component:Test
   }
 }
 
@@ -55,6 +61,11 @@ const navList = [{
   name: '导航2cart',
   name_en: "cart",
   route: "/cart"
+},
+{
+  name: 'Test',
+  name_en: "test",
+  route: "/test"
 }]
 class App extends React.PureComponent {
   componentDidMount() {
@@ -66,7 +77,7 @@ class App extends React.PureComponent {
         <div>
           <Row>
             <Col span={4}>
-              <Menu defaultSelectedKeys={['home']}>
+              <Menu defaultSelectedKeys={['home']} >
                 {navList.map(item => (
                   <Menu.Item key={item.name_en}>
                     <Link to={item.route}>{
@@ -84,6 +95,7 @@ class App extends React.PureComponent {
                   let item = AppRoute[key];
                   return (<Route key={key} exact path={item.path} component={item.component} />)
                 })}
+                <Redirect to="/home"></Redirect>
               </Switch>
             </Col>
           </Row>
