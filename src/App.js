@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-08 12:52:36
+ * @LastEditTime: 2020-04-08 19:10:58
  * @Description: file content
  */
 import React from 'react';
@@ -108,10 +108,6 @@ class App extends React.PureComponent {
 function Sandwiches() {
   return <h2>Sandwiches</h2>;
 }
-const mapStateToProps = state => (
-  {
-    aa: state
-  }
-)
+
 
 export default App
