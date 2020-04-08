@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-06 14:11:10
+ * @LastEditTime: 2020-04-08 11:48:35
  * @Description: file content
  */
 import React from 'react';
@@ -10,16 +10,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux';
-import { createStore,applyMiddleware} from 'redux'
-import thunk from 'redux-thunk';
-import reducer from './reduer/index'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './store/reducer/reducer'
 // const initialState = {};
-const middleware = [thunk];
-const store = createStore(reducer,{},applyMiddleware(...middleware))
+const store = createStore(reducer)
+
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+      <App />
   </Provider>
   ,
   document.getElementById('root')
