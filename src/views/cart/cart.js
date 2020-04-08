@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-08 07:50:07
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-08 12:08:44
+ * @LastEditTime: 2020-04-08 12:31:10
  * @Description: file content
  */
 
@@ -31,7 +31,7 @@ import { connect } from 'react-redux'
 //   )
 function mapDispatchToProps(dispatch) {
     return {
-      onIncreaseClick1: () => dispatch({type:"INCREMENT"})
+      onIncreaseClick1: () => dispatch({type:"INCREMENT",value:'fanjf'})
     }
   }
 
