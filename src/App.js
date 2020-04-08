@@ -2,15 +2,16 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-08 08:06:11
+ * @LastEditTime: 2020-04-08 12:09:43
  * @Description: file content
  */
 import React from 'react';
+import { connect } from 'react-redux'
 import './App.css';
 import Home from './views/home/home'
 import Cart from './views/cart/cart'
 import Login from './views/login/login'
-import { Menu, Row, Col } from 'antd'
+import { Menu, Row, Col,Button } from 'antd'
 import {
   MailOutlined,
   AppstoreOutlined,
@@ -56,10 +57,10 @@ const navList = [{
   route: "/cart"
 }]
 class App extends React.PureComponent {
-  componentDidMount(){
-    console.log('ssss',this.props)
+  componentDidMount() {
   }
   render() {
+    console.log('this.context', this)
     return (
       <Router history={useHistory}>
         <div>
@@ -76,14 +77,14 @@ class App extends React.PureComponent {
               </Menu>
             </Col>
             <Col span={19} offset={1}>
-                <Switch>
-                  {/* <Route exact path="/home" component={Home}></Route>
+              <Switch>
+                {/* <Route exact path="/home" component={Home}></Route>
                   <Route exact path="/cart" component={Cart}></Route> */}
-                  {Object.keys(AppRoute).map(key => {
-                    let item = AppRoute[key];
-                    return (<Route key={key} exact path={item.path} component={item.component} />)
-                  })}
-                </Switch>
+                {Object.keys(AppRoute).map(key => {
+                  let item = AppRoute[key];
+                  return (<Route key={key} exact path={item.path} component={item.component} />)
+                })}
+              </Switch>
             </Col>
           </Row>
         </div>
@@ -95,28 +96,10 @@ class App extends React.PureComponent {
 function Sandwiches() {
   return <h2>Sandwiches</h2>;
 }
-const mapStateToProps = state => ({
-  secondHeader: state.test.secondHeader,
-})
-export default App
-// function Tacos({ routes }) {
-//   return (
-//     <div>
-//       <h2>Tacos</h2>
-//       <ul>
-//         <li>
-//           <Link to="/tacos/bus">Bus</Link>
-//         </li>
-//         <li>
-//           <Link to="/tacos/cart">Cart</Link>
-//         </li>
-//       </ul>
+const mapStateToProps = state => (
+  {
+    aa: state
+  }
+)
 
-//       <Switch>
-//         {routes.map((route, i) => (
-//           <RouteWithSubRoutes key={i} {...route} />
-//         ))}
-//       </Switch>
-//     </div>
-//   );
-// }
+export default App

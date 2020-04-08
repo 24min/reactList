@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-08 08:08:44
+ * @LastEditTime: 2020-04-08 11:48:35
  * @Description: file content
  */
 import React from 'react';
@@ -15,6 +15,7 @@ import { Provider } from 'react-redux'
 import reducer from './store/reducer/reducer'
 // const initialState = {};
 const store = createStore(reducer)
+
 ReactDOM.render(
   <Provider store={store}>
       <App />

@@ -2,18 +2,19 @@
  * @Author: 24min
  * @Date: 2020-04-01 20:06:26
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-08 07:44:14
+ * @LastEditTime: 2020-04-08 12:12:20
  * @Description: file content
  */
 import React from 'react';
 import './home.css'
+import { connect } from 'react-redux'
 import { Menu, Row, Col } from 'antd'
 import {
     Switch,
     Route,
     Link
 } from "react-router-dom";
-export default class Home extends React.PureComponent {
+class Home extends React.PureComponent {
     constructor(props) {
         super(props)
     }
@@ -22,16 +23,9 @@ export default class Home extends React.PureComponent {
             <div>
                 <Row>
                     <Col span={6}>
-                        Home
-                        {/* <Menu defaultSelectedKeys={['bus']}>
-                            <Menu.Item key="bus">
-                                <Link to="/home/bus">bus</Link>
-                            </Menu.Item>
-                            <Menu.Item key="Cart" >
-                                <Link to="/home/Cart">Cart</Link>
-                            </Menu.Item>
-                        </Menu> */}
-                        {/* 左导航 */}
+                        Home<br />
+                        redux中 INCREMENT的type的state：
+                        {this.props.aa}
                     </Col>
                     <Col span={18}>
                     </Col>
@@ -42,3 +36,11 @@ export default class Home extends React.PureComponent {
 
     }
 }
+
+const mapStateToProps = state => (
+    {
+        aa: state
+    }
+)
+
+export default connect(mapStateToProps)(Home)
