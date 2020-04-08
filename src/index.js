@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-08 11:48:35
+ * @LastEditTime: 2020-04-08 19:11:27
  * @Description: file content
  */
 import React from 'react';
@@ -12,9 +12,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './store/reducer/reducer'
+import rootReducer from './store/reducer/reducer'
 // const initialState = {};
-const store = createStore(reducer)
+const store = createStore(rootReducer)
 
 ReactDOM.render(
   <Provider store={store}>

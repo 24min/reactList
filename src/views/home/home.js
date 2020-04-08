@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-01 20:06:26
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-08 12:12:20
+ * @LastEditTime: 2020-04-08 19:14:58
  * @Description: file content
  */
 import React from 'react';
@@ -17,6 +17,7 @@ import {
 class Home extends React.PureComponent {
     constructor(props) {
         super(props)
+        // console.log()
     }
     render() {
         return (
@@ -25,7 +26,7 @@ class Home extends React.PureComponent {
                     <Col span={6}>
                         Home<br />
                         redux中 INCREMENT的type的state：
-                        {this.props.aa}
+                        <strong>{this.props.aa}</strong>
                     </Col>
                     <Col span={18}>
                     </Col>
@@ -37,10 +38,11 @@ class Home extends React.PureComponent {
     }
 }
 
-const mapStateToProps = state => (
-    {
-        aa: state
-    }
-)
+const mapStateToProps = state =>
+    (
+        {
+            aa: state.cartReducer
+        }
+    )
 
 export default connect(mapStateToProps)(Home)
