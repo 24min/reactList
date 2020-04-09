@@ -22,7 +22,7 @@
 
 ## [问题](https://github.com/24min/Document/blob/master/vue/learnReact.md)
 
-![reactLogo](../../../24min/Document/images/reactLogo.png)
+![reactLogo](https://github.com/24min/Document/blob/master/images/reactLogo.png)
 
 
 
@@ -107,7 +107,7 @@ let new_son = new son()
 
 **解：**
 
-![reactCompoent](../../../24min/Document/images/reactCompoent.png)
+![reactCompoent](https://github.com/24min/Document/blob/master/images/reactCompoent.png)
 
 当一个React组件被创建时，首先是经历组件挂载(当组件实例被创建并插入 DOM 中)的阶段：
 
