@@ -2,7 +2,7 @@
  * @Author: 24min
  * @Date: 2020-04-01 19:41:09
  * @LastEditors: 24min
- * @LastEditTime: 2020-04-08 19:10:58
+ * @LastEditTime: 2020-04-13 20:55:01
  * @Description: file content
  */
 import React from 'react';
@@ -12,6 +12,7 @@ import Home from './views/home/home'
 import Cart from './views/cart/cart'
 import Login from './views/login/login'
 import Test from './views/test/test'
+import MyComponents from './views/myComponents/myComonents'
 import { Menu, Row, Col,Button } from 'antd'
 import {
   MailOutlined,
@@ -49,6 +50,10 @@ const AppRoute = {
   test:{
     path:'/test',
     component:Test
+  },
+  myComponent:{
+    path:'/myComponent',
+    component:MyComponents
   }
 }
 
@@ -66,7 +71,13 @@ const navList = [{
   name: 'Test',
   name_en: "test",
   route: "/test"
-}]
+},
+{
+  name: 'MyComponents',
+  name_en: "myComponent",
+  route: "/myComponent"
+},
+]
 class App extends React.PureComponent {
   componentDidMount() {
   }
